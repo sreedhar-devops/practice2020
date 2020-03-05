@@ -4,6 +4,6 @@
     tasks:
     - name: install apache2 on ubuntu
       package:
-        - name: "{{package_name}}"
-          state: present
+        name: "{{package_name}}"
+        state: present
     
