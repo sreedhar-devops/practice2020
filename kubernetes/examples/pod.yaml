@@ -1,0 +1,14 @@
+---
+apiVersion: core/v1
+kind: Pod
+metadata:
+  name: testpod
+  labels:
+    name: test
+    version: 1
+spec: 
+  containers:
+    - 
+      image: nginx
+      name: nginx-example
+  

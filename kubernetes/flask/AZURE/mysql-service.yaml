@@ -1,0 +1,18 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-db-svc
+  labels: 
+    name: mysql-db
+    ver: "1.0"     
+spec:
+  clusterIP: None
+  ports:
+    -  port: 3306
+       targetPort:  3306
+  selector:
+    name: mysql-db
+    ver: "1.0"
+  
+

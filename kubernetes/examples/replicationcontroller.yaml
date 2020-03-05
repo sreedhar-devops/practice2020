@@ -1,0 +1,27 @@
+apiVersion: core/v1
+kind: ReplicationController
+metadata:
+  name: ReplicationController-example
+  labels:
+    ver: 1.0
+    name: rep
+spec:
+  minReadySeconds: 10
+  replicas: 3
+  selector: 
+    name: rep
+    ver: 1.0
+  template:
+    metadata:
+      name: testpod
+      labels:
+        name: rep
+        ver: 1.0
+  spec:
+    containers:
+      - 
+        image: nginx
+        name: nginx-example
+  
+
+

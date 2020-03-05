@@ -1,0 +1,7 @@
+take image directly mysql:5.6
+
+####### MYSQL container creation ###########
+docker container run -d --name mysql1 -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=test -e MYSQL_USER=directdevops -e MYSQL_PASSWORD=directdevops mysql:5.6
+
+
+docker inspect mysql | grep IPAddress

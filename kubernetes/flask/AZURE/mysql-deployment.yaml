@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-db-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: mysql-db
+      ver: "1.0"
+  
+  template:
+    metadata:
+      labels:
+        name: mysql-db
+        ver: "1.0"
+    spec:
+      containers:
+        -  name: mysql-container
+           image: mysql:5.6
+           env:
+             -  name: MYSQL_DATABASE
+                value: 'test'
+             -  name: MYSQL_USER
+                value: 'directdevops'
+             -  name: MYSQL_PASSWORD 
+                value: 'directdevops'
+             -  name: MYSQL_ROOT_PASSWORD
+                value: 'password'
+           ports:
+             -  hostPort: 3306
+                containerPort: 3306
+                protocol: TCP
+           volumeMounts:
+             -  name: mysqlvol
+                mountPath: /var/lib/mysql
+      volumes:
+        -  name: mysqlvol 
+           persistentVolumeClaim:
+             claimName: azure-managed-disk
