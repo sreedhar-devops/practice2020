@@ -1,9 +1,37 @@
 ---
  -  hosts: all
-    gather_facts: yes  
+    gather_facts: yes 
+    become: yes 
     tasks:
-    - name: install apache2 on ubuntu
+    - name: update all packages of centos
+      yum:
+        name: "*"
+        state: latest
+        update_cache: yes
+      when: ansible_os_family == "Redhat"
+    - name: update all packages of ubuntu
+      apt:
+        update_cache: yes
+      when: ansible_os_family == "Debian"
+    - name: install apache2 or httpd package
       package:
         name: "{{package_name}}"
         state: present
+    - name: start the service 
+      service:
+        state: started
+        name: "{{package_name}}"
+    - name: install package using wit_item
+      package:
+        name: "{{item}}"
+      with_items:
+      - git
+      - tree
+      - nano
+    - name: perform ls comman
+      command: ls -al
+      register: lsoutput
+    - debug:
+      var: lsoutput
+
     
