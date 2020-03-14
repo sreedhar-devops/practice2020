@@ -1,2 +1,9 @@
 ---
 # tasks file for commonrole
+- hosts: ubuntu
+  gather_facts: yes
+  become: yes
+  tasks:
+    - name: update all packages
+      apt: 
+        update_cache: yes

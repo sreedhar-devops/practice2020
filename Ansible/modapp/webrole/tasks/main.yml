@@ -1,2 +1,12 @@
 ---
 # tasks file for webrole
+tasks:
+  - name: install nginx 
+    apt:
+      name: nginx
+      state: present  
+  - name: copy nginx conf file 
+    template:
+      src: templates/nginxconf.j2
+      dest: /etc/nginx/sites-available/default
+    notify: "restart nginx"
