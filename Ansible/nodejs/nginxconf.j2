@@ -1,0 +1,14 @@
+server {
+    listen 80;
+
+    server_name "{{app_DNS_name}}";
+
+    location / {
+        proxy_pass http://"{{app_Private_IP_Address}}:{{app_Port_Number}}";
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
