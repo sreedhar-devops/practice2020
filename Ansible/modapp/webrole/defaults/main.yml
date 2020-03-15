@@ -1,6 +1,6 @@
 ---
 # defaults file for webrole
-vars:
+
     app_DNS_name: "ip-172-31-19-18.us-west-2.compute.internal"
     app_Private_IP_Address: "172.31.19.18"
     app_Port_Number: 3000
