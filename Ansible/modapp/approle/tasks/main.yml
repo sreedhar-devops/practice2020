@@ -1,8 +1,6 @@
 ---
 # tasks file for approle
-
-  
-  tasks: 
+tasks: 
   - name: download setup.sh
     command: curl -sL https://deb.nodesource.com/setup_"{{setupVersion}}" -o "{{folder_path}}"/nodesource_setup.sh
     args:

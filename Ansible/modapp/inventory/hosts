@@ -1,0 +1,10 @@
+[ubuntu]
+ip-172-31-19-18.us-west-2.compute.internal
+ip-172-31-22-75.us-west-2.compute.internal
+
+[app]
+ip-172-31-19-18.us-west-2.compute.internal
+
+
+[web]
+ip-172-31-22-75.us-west-2.compute.internal
