@@ -1,9 +1,11 @@
 ---
 # tasks file for approle
 
-  - name: download setup.sh
-    command: "curl -sL https://deb.nodesource.com/setup_{{setupVersion}} -o {{folder_path}}/nodesource_setup.sh"
-    
+  
+  - name: Download setup.sh
+    get_url:
+    url: "https://deb.nodesource.com/setup_{{setupVersion}}"
+    dest: "{{folder_path}}/nodesource_setup.sh"  
   - name: run setup.sh
     shell: "/bin/bash {{folder_path}}/nodesource_setup.sh"
   - name: install nodejs
