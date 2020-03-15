@@ -1,6 +1,6 @@
 ---
 # tasks file for commonrole
 tasks:
-  - name: update all packages
-    apt: 
-      update_cache: yes
+- name: update all packages
+  apt: 
+    update_cache: yes
