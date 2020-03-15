@@ -1,15 +1,15 @@
 ---
-- hosts:
+- hosts: ubuntu
   gather_facts: yes
   become: yes
   roles:
     - commonrole
-- hosts:
+- hosts: app
   gather_facts: yes
   become: yes
   roles:
     - approle
-- hosts:
+- hosts: web
   gather_facts: yes
   become: yes
   roles:
