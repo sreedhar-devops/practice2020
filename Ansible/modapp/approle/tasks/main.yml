@@ -3,8 +3,7 @@
 
   - name: download setup.sh
     command: "curl -sL https://deb.nodesource.com/setup_{{setupVersion}} -o {{folder_path}}/nodesource_setup.sh"
-    args:
-      creates: "{{folder_path}}/nodesource_setup.sh"
+    
   - name: run setup.sh
     shell: "/bin/bash {{folder_path}}/nodesource_setup.sh"
   - name: install nodejs
