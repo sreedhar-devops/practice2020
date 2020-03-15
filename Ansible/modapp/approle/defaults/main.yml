@@ -1,6 +1,6 @@
 ---
 # defaults file for approle
 
-    folder_path: /home/ansible
+    folder_path: /home/Ansible
     setupVersion: 8.x
     portNumber: 3000
